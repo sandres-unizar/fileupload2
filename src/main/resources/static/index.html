@@ -1,0 +1,62 @@
+<html xmlns:th="https://www.thymeleaf.org" xmlns:ath="http://www.w3.org/1999/xhtml">
+<body>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <form method="GET"  action="/Usuarios" >
+        <table>
+            <tr><td>DB URL:</td><td><input type="text" name="Usuarios" /></td></tr>
+            <tr><td></td><td><input type="submit" value="UsersList" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <form method="GET"  content="application/JSON" action="/Usuarios/{id}" >
+        <table>
+            <tr><td>User ID:</td><td><input type="text"  name="id"/></td></tr>
+            <tr><td></td><td><input type="submit" value="UserAccount" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <form method="POST" content="application/JSON" action="/Usuarios" >
+        <table>
+            <tr><td>Usuario:</td><td><input type="text"  name="name" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Sing Up" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+        <table>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <form method="GET"  action="/files">
+        <table>
+            <tr><td>Repository to check:</td><td><input type="text" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Content List" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <form method="GET"  action="/files/{id}">
+        <table>
+            <tr><td>File id:</td><td><input type="text" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Download" /></td></tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
